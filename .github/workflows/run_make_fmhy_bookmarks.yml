@@ -31,6 +31,6 @@ jobs:
         git add fmhy_in_bookmarks.html
         git add fmhy_in_bookmarks_starred_only.html
         git commit -m 'Update fmhy_in_bookmarks.html'
-        git push
+        git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:${GITHUB_REF#refs/heads/}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
